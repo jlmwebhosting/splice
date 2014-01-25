@@ -1,4 +1,3 @@
-splice
-======
+# Splice
 
-Smart decoupled independant components usable in your back-end and front-end 
+Smart decoupled independant components usable in your back-end and front-end.
