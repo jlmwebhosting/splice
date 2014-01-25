@@ -2,7 +2,6 @@
 namespace Splice\Dummies;
 
 use Splice\Components\AbstractComponent;
-use Splice\Requirements\ComponentRequirement;
 
 /**
  * A dummy component parent of a child component

@@ -55,7 +55,7 @@ class SpliceServiceProvider extends ServiceProvider
 	public function bindSpliceClasses(Container $app)
 	{
 		// Bind the Mustache templating engine if necessary
-		$app->bindIf('view', function($app) {
+		$app->bindIf('view', function ($app) {
 			$mustache = new Mustache_Engine;
 			$mustache->setLoader(new Mustache_Loader_FilesystemLoader($app['path.views']));
 

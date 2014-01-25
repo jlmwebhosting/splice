@@ -2,7 +2,6 @@
 namespace Splice\Components;
 
 use Splice\SpliceTestCase;
-use Splice\Dummies\DummyComponent;
 
 class ComponentTest extends SpliceTestCase
 {

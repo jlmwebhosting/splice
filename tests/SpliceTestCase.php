@@ -5,7 +5,6 @@ use Illuminate\Container\Container;
 use Mockery;
 use PHPUnit_Framework_TestCase;
 use Splice\Dummies\DummyComponent;
-use Splice\SpliceServiceProvider;
 
 /**
  * Basic test case for all Splice tests
