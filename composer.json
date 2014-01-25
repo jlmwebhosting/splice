@@ -5,7 +5,8 @@
 		"illuminate/support": "~4"
 	},
 	"require-dev": {
-		"mockery/mockery": "dev-master"
+		"mockery/mockery": "dev-master",
+		"mustache/mustache": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {
