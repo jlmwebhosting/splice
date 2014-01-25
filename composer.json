@@ -5,10 +5,10 @@
 		"php": ">=5.5",
 		"illuminate/support": "~4",
 		"illuminate/container": "~4"
+		"mustache/mustache": "dev-master",
 	},
 	"require-dev": {
-		"mockery/mockery": "dev-master",
-		"mustache/mustache": "dev-master"
+		"mockery/mockery": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {
