@@ -9,6 +9,13 @@ use Splice\Interfaces\ComponentInterface;
 abstract class AbstractComponent implements ComponentInterface
 {
 	/**
+	 * The data to be passed to the component
+	 *
+	 * @var array
+	 */
+	public $data = array();
+
+	/**
 	 * The path to the Component's template
 	 *
 	 * @var string

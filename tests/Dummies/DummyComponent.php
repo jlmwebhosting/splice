@@ -2,6 +2,7 @@
 namespace Splice\Dummies;
 
 use Splice\Components\AbstractComponent;
+use Splice\Requirements\StaticRequirement;
 
 /**
  * A dummy component
@@ -15,17 +16,17 @@ class DummyComponent extends AbstractComponent
 	 */
 	public function collect()
 	{
-		yield array(
+		yield new StaticRequirement(
 			'users',
 			array(
 				['name' => 'foo'],
 				['name' => 'bar'],
-			),
+			)
 		);
 
-		yield array(
+		yield new StaticRequirement(
 			'header',
-			'HEADER',
+			'HEADER'
 		);
 	}
 }

@@ -10,13 +10,6 @@ use Splice\Interfaces\ViewRendererInterface;
 class Assembler
 {
 	/**
-	 * The data to be passed to the components
-	 *
-	 * @var array
-	 */
-	protected $data = array();
-
-	/**
 	 * The ViewRendererInterface implementation
 	 *
 	 * @var ViewRendererInterface
@@ -44,13 +37,12 @@ class Assembler
 	{
 		// Collect the required data
 		foreach ($component->collect() as $requirement) {
-			list ($property, $data) = $requirement;
-			$this->data[$property] = $data;
+			$component->data[$requirement->getProperty()] = $requirement->resolve();
 		}
 
 		// Get and render the template
 		$template = $component->getTemplate();
-		$template = $this->view->render($template, $this->data);
+		$template = $this->view->render($template, $component->data);
 
 		return trim($template);
 	}
