@@ -13,7 +13,7 @@ abstract class AbstractComponent implements ComponentInterface
 	 *
 	 * @var array
 	 */
-	public $data = array();
+	public $data;
 
 	/**
 	 * The path to the Component's template
@@ -25,18 +25,18 @@ abstract class AbstractComponent implements ComponentInterface
 	/**
 	 * Build a new Component instance
 	 */
-	public function __construct($path)
+	public function __construct(array $data = array())
 	{
-		$this->path = $path;
+		$this->data = $data;
 	}
 
 	/**
-	 * Get the contents of the component's template
+	 * Render the component
 	 *
 	 * @return string
 	 */
-	public function getTemplate()
+	public function render($view)
 	{
-		return file_get_contents($this->path);
+		return $view->render($this->path, $this->data);
 	}
 }

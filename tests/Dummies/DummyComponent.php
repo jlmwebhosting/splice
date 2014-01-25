@@ -9,6 +9,8 @@ use Splice\Requirements\StaticRequirement;
  */
 class DummyComponent extends AbstractComponent
 {
+	protected $path = 'test-view';
+
 	/**
 	 * Collect the data for the component
 	 *

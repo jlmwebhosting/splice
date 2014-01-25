@@ -3,6 +3,7 @@ namespace Splice;
 
 use Mockery;
 use Mustache_Engine;
+use Mustache_Loader_FilesystemLoader;
 use PHPUnit_Framework_TestCase;
 use Splice\Dummies\DummyComponent;
 use Splice\SpliceServiceProvider;
@@ -28,7 +29,10 @@ abstract class SpliceTestCase extends PHPUnit_Framework_TestCase
 
 		// Bind the Mustache templating engine
 		$this->app->bind('mustache', function() {
-			return new Mustache_Engine;
+			$mustache = new Mustache_Engine;
+			$mustache->setLoader(new Mustache_Loader_FilesystemLoader(__DIR__.'/views'));
+
+			return $mustache;
 		});
 
 		// Bind the assembler
@@ -58,6 +62,6 @@ abstract class SpliceTestCase extends PHPUnit_Framework_TestCase
 	 */
 	protected function getDummyComponent()
 	{
-		return new DummyComponent(__DIR__.'/views/test-view.mustache');
+		return new DummyComponent;
 	}
 }

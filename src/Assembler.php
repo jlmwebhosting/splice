@@ -27,6 +27,18 @@ class Assembler
 	}
 
 	/**
+	 * Render a component by name
+	 *
+	 * @param string $component
+	 *
+	 * @return string
+	 */
+	public function render($component, array $data = array())
+	{
+		return $this->assemble(new $component($data));
+	}
+
+	/**
 	 * Assemble a particular component
 	 *
 	 * @param ComponentInterface $component
@@ -37,13 +49,17 @@ class Assembler
 	{
 		// Collect the required data
 		foreach ($component->collect() as $requirement) {
+			if ($requirement instanceof ComponentRequirement) {
+				$requirement->setAssembler($this);
+			}
+
 			$component->data[$requirement->getProperty()] = $requirement->resolve();
 		}
 
-		// Get and render the template
-		$template = $component->getTemplate();
-		$template = $this->view->render($template, $component->data);
+		// Render the template
+		$template = $component->render($this->view);
+		$template = trim($template);
 
-		return trim($template);
+		return $template;
 	}
 }

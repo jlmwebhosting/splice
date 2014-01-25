@@ -14,9 +14,11 @@ interface ComponentInterface
 	public function collect();
 
 	/**
-	 * Get the contents of the component's template
+	 * Render the component
+	 *
+	 * @param ViewRendererInterface $view
 	 *
 	 * @return string
 	 */
-	public function getTemplate();
+	public function render($view);
 }
