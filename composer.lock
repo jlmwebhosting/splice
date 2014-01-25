@@ -3,8 +3,54 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "61705dd158c8f7dc43c820314418a429",
+    "hash": "60618838c9ebbaf1b97742842331985e",
     "packages": [
+        {
+            "name": "illuminate/container",
+            "version": "v4.1.18",
+            "target-dir": "Illuminate/Container",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/container.git",
+                "reference": "5bc3b7e3227bf6933d382da3cb4631ca1ca63368"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/5bc3b7e3227bf6933d382da3cb4631ca1ca63368",
+                "reference": "5bc3b7e3227bf6933d382da3cb4631ca1ca63368",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Illuminate\\Container": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com",
+                    "homepage": "https://github.com/taylorotwell",
+                    "role": "Developer"
+                }
+            ],
+            "time": "2014-01-17 01:48:27"
+        },
         {
             "name": "illuminate/support",
             "version": "v4.1.18",
@@ -177,9 +223,9 @@
         "mockery/mockery": 20,
         "mustache/mustache": 20
     },
-    "platform": [
-
-    ],
+    "platform": {
+        "php": ">=5.5"
+    },
     "platform-dev": [
 
     ]

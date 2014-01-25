@@ -28,7 +28,7 @@ class Assembler
 	 *
 	 * @param ViewRendererInterface $view
 	 */
-	public function __construct(ViewRendererInterface $view)
+	public function __construct($view)
 	{
 		$this->view = $view;
 	}
@@ -45,13 +45,13 @@ class Assembler
 		// Collect the required data
 		foreach ($component->collect() as $requirement) {
 			list ($property, $data) = $requirement;
-			$this->data[$property] = $data();
+			$this->data[$property] = $data;
 		}
 
 		// Get and render the template
 		$template = $component->getTemplate();
 		$template = $this->view->render($template, $this->data);
 
-		return $template;
+		return trim($template);
 	}
 }

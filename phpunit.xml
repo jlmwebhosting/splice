@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit backupGlobals="false"
 		 backupStaticAttributes="false"
-		 bootstrap="tests/SpliceTestCase.php"
+		 bootstrap="vendor/autoload.php"
 		 colors="true"
 		 convertErrorsToExceptions="true"
 		 convertNoticesToExceptions="true"
@@ -18,7 +18,7 @@
 	</filter>
 
 	<testsuites>
-		<testsuite name="Package Test Suite">
+		<testsuite name="Splice Test Suite">
 			<directory suffix=".php">tests</directory>
 		</testsuite>
 	</testsuites>

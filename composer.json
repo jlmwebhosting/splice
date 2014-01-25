@@ -2,7 +2,9 @@
 	"name": "anahkiasen/splice",
 	"description": "Smart decoupled independant components usable in your back-end and front-end.",
 	"require": {
-		"illuminate/support": "~4"
+		"php": ">=5.5",
+		"illuminate/support": "~4",
+		"illuminate/container": "~4"
 	},
 	"require-dev": {
 		"mockery/mockery": "dev-master",
@@ -11,7 +13,8 @@
 	"autoload": {
 		"psr-4": {
 			"Splice\\": "src"
-		}
+		},
+		"classmap": ["tests"]
 	},
 	"license": "MIT",
 	"authors": [
