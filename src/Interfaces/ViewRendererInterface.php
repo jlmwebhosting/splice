@@ -7,17 +7,7 @@ namespace Splice\Interfaces;
 interface ViewRendererInterface
 {
 	/**
-	 * Compile a given template string
-	 *
-	 * @param string $template
-	 * @param array  $data
-	 *
-	 * @return string
-	 */
-	public function compile($template, array $data = array());
-
-	/**
-	 * Renders a view at a given path
+	 * Renders a given string
 	 *
 	 * @param string $path
 	 * @param array  $data

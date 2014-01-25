@@ -1,25 +1,35 @@
 <?php
 namespace Splice\Components;
 
-use Splice\Interfaces\ViewRendererInterface;
+use Splice\Interfaces\ComponentInterface;
 
 /**
  * A representation of an individual component
  */
-abstract class AbstractComponent
+abstract class AbstractComponent implements ComponentInterface
 {
 	/**
-	 * The ViewRenderer implementation
+	 * The path to the Component's template
 	 *
-	 * @var ViewRendererInterface
+	 * @var string
 	 */
-	protected $view;
+	protected $path;
 
 	/**
 	 * Build a new Component instance
 	 */
-	public function __construct(ViewRendererInterface $view)
+	public function __construct($path)
 	{
-		$this->view = $view;
+		$this->path = $path;
+	}
+
+	/**
+	 * Get the contents of the component's template
+	 *
+	 * @return string
+	 */
+	public function getTemplate()
+	{
+		return file_get_contents($this->path);
 	}
 }
