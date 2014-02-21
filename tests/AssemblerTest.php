@@ -13,8 +13,8 @@ class AssemblerTest extends SpliceTestCase
 
 		$this->assertEquals(
 			'<h1>HEADER</h1>'.PHP_EOL.
-			'foo<br>'.PHP_EOL.
-			'bar<br>',
+			'	foo<br>'.PHP_EOL.
+			'	bar<br>',
 			$template
 		);
 	}
