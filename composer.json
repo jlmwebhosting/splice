@@ -4,17 +4,16 @@
 	"require": {
 		"php": ">=5.5",
 		"illuminate/support": "~4",
-		"illuminate/container": "~4"
-		"mustache/mustache": "dev-master",
+		"illuminate/container": "~4",
+		"mustache/mustache": "dev-master"
 	},
 	"require-dev": {
 		"mockery/mockery": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {
-			"Splice\\": "src"
-		},
-		"classmap": ["tests"]
+			"Splice\\": ["src", "tests"]
+		}
 	},
 	"license": "MIT",
 	"authors": [
